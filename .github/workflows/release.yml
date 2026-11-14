@@ -1,0 +1,25 @@
+name: Package and release
+
+# Runs when a tag is pushed, e.g. 0.1.0 (release), 0.2.0-beta1 (beta) or 0.2.0-alpha1 (alpha).
+on:
+  push:
+    tags:
+      - '**'
+
+permissions:
+  contents: write # lets the packager create the GitHub release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}   # CurseForge API token, see RELEASING.md
+      GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # provided by GitHub, nothing to set up
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # the packager needs the tags
+
+      - name: Package and release
+        uses: BigWigsMods/packager@v2
