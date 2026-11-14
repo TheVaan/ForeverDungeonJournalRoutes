@@ -1,5 +1,5 @@
 ## Interface: 16001
-## Title: DungeonJournal Routes
+## Title: Routes for DungeonJournal
 ## Notes: Shows the Forever Dungeon Routes routes (paths, boss numbers, notes, level changes) on the DungeonJournal maps.|n|cffeda55fBy TheVaan|r
 ## Notes-deDE: Zeigt die Routen von Forever Dungeon Routes (Wege, Boss-Nummern, Notizen, Ebenenwechsel) auf den Karten des DungeonJournals.|n|cffeda55fBy TheVaan|r
 ## Author: TheVaan

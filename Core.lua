@@ -1,4 +1,4 @@
--- DungeonJournal Routes: shows the routes of Forever Dungeon Routes (FDR) on the Dungeon Journal (FDJ) maps.
+-- Routes for DungeonJournal: shows the routes of Forever Dungeon Routes (FDR) on the Dungeon Journal (FDJ) maps.
 --
 -- FDJ has no plugin interface, so this hooks FDJ.RenderCustomDungeonMap (every map render goes through it)
 -- and draws on the journal's map art holder afterwards. Everything is wrapped so that an error here can
@@ -28,7 +28,7 @@ function NS.T(key)
 	return s and s[DE and 2 or 1] or key
 end
 function NS.Print(text)
-	DEFAULT_CHAT_FRAME:AddMessage("|cffe6b85cDungeonJournal Routes|r: " .. tostring(text))
+	DEFAULT_CHAT_FRAME:AddMessage("|cffe6b85cRoutes for DungeonJournal|r:" .. tostring(text))
 end
 
 local FDJ, FDR, db

@@ -1,4 +1,4 @@
-# DungeonJournal Routes
+# Routes for DungeonJournal
 
 Shows the dungeon routes of **Forever Dungeon Routes** directly on the dungeon maps of **DungeonJournal** (WoW Forever).
 
