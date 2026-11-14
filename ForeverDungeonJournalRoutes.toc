@@ -10,6 +10,7 @@
 ## SavedVariables: ForeverDungeonJournalRoutesDB
 ## X-License: MIT
 ## X-Website: https://github.com/TheVaan/ForeverDungeonJournalRoutes
+## X-Curse-Project-ID: 1805798
 
 Mapping.lua
 Render.lua
