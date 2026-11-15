@@ -19,8 +19,8 @@ DungeonJournal and Forever Dungeon Routes each bring their own dungeon maps. Wit
 ## Requirements
 
 - WoW Forever (interface 16001)
-- DungeonJournal (by Exehn)
-- Forever Dungeon Routes (by Checkov23)
+- [DungeonJournal](https://www.curseforge.com/wow/addons/dungeonjournal) (by Exehn)
+- [Forever Dungeon Routes](https://www.curseforge.com/wow/addons/forever-dungeon-routes) (by Checkov23)
 
 Both are separate addons and are not part of this package. Routes are created, imported and edited in Forever Dungeon Routes (`/fdr`).
 

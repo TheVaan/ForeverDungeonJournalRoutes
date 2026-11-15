@@ -32,3 +32,15 @@ The packager recognizes interface `16001` as WoW Forever and uploads the file fo
 ## Trying the package locally
 
 Run the packager without uploading: `release.sh -d` (needs bash, git, curl, zip; see the packager README). The result is in `.release/`.
+
+## Local test build
+
+`build.ps1` builds the addon the way the packager does (honors the `.pkgmeta` ignore list, fills in `@project-version@` from `git describe`) and replaces the addon folder in your WoW AddOns folder. It is listed in `.pkgmeta` under `ignore`, so it is not part of the release.
+
+Set the AddOns folder once in a git-ignored `.env` file next to the script:
+
+```
+WOW_ADDONS_DIR=C:\Program Files (x86)\World of Warcraft\_anniversary_\Interface\AddOns
+```
+
+Then run `.\build.ps1` (or `.\build.ps1 -Destination <path>` / `-Version <text>`), and `/reload` in game.
