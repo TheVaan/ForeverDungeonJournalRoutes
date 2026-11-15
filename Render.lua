@@ -78,7 +78,14 @@ local function DrawPath(FDR, path)
 	if n < 2 then return end
 	local side = path.kind == "side"
 	local t0, t1 = path.t0 or 0, path.t1 or 1
-	local count = max(1, n - 1)
+	-- Gradient position follows the distance along the route (like FDR), not the waypoint number,
+	-- so unevenly spaced waypoints do not skew the colors. cum[i] = length up to waypoint i.
+	local cum = { 0 }
+	for i = 2, n do
+		local dx, dy = (pts[2 * i - 1] - pts[2 * i - 3]) * width, (pts[2 * i] - pts[2 * i - 2]) * height
+		cum[i] = cum[i - 1] + sqrt(dx * dx + dy * dy)
+	end
+	local total = cum[n] > 0 and cum[n] or 1
 	local ax, ay, aIndex = pts[1] * width, pts[2] * height, 1
 	local travelled, nextArrow = 0, ARROW_FIRST
 	for i = 2, n do
@@ -98,7 +105,8 @@ local function DrawPath(FDR, path)
 						start = start + DASH + GAP
 					end
 				else
-					local t = t0 + ((aIndex - 1) / count) * (t1 - t0)
+					-- Midpoint of the (possibly merged) segment, as FDR colors its segments.
+					local t = t0 + (t1 - t0) * ((cum[aIndex] + cum[i]) * 0.5 / total)
 					local red, green, blue = FDR.GradientColor(t)
 					Line(0, ax, ay, x, y, LINE_CASING, 0.05, 0.04, 0.03, 0.85)
 					Line(1, ax, ay, x, y, LINE_MAIN, red, green, blue, 1)
