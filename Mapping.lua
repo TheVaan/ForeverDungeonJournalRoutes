@@ -15,8 +15,7 @@ local FIXED = {
 	["Ruins of Lordaeron"]        = { 1029991 },
 	-- FDJ lists the Underbelly first, FDR lists the city first.
 	["City of Dalaran"]           = { 1029592, 1029591 },
-	-- Atal'Byzal (floor 2) has no FDR counterpart.
-	["The Drowned City"]          = { 1029701, false },
+	["The Drowned City"]          = { 1029701, 1029702 },
 	["Blackmaw Hold"]             = { 1029741, 1029742, 1029743, 1029744, 1029745, 1029746 },
 	["Krol'dok Stronghold"]       = { 1030391 },
 	["Alcaz Prison"]              = { 1029941, 1029942 },

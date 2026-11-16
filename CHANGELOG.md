@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- The Drowned City: the route is now shown on the second level, Atal'Byzal, too (needs Forever Dungeon Routes 1.2.7 or newer).
+
 ## 1.0.0
 
 - First release.
